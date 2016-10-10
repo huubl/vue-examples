@@ -1,0 +1,23 @@
+button
+{
+    background: #EEE;
+    border: 1px solid #999;
+    padding: 0.5rem 0.75rem;
+    min-width: 3rem;
+    margin: 0 0.1rem 0.2rem;
+}
+
+button:hover
+{
+    background: #DDD;
+}
+
+input[type=text]
+{
+    width: 500px;
+}
+
+.equals button
+{
+    width: 20%;
+}

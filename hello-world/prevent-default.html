@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue User Input</title>
+    <link href="../assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <p v-if="show">{{ message }}</p>
+    <form v-on:submit.prevent="onSubmit">
+        <p><input type="text" v-model="message"></p>
+        <p><button class="btn btn-primary">Submit Form</button></p>
+    </form>
+
+    <p>This will not submit the form but will display the typed message in the input textbox</p>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            show: false
+        },
+        methods: {
+            onSubmit: function()
+            {
+                this.show = true;
+            }
+        }
+    })
+</script>
+</body>
+</html>

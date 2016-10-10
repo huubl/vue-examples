@@ -14,3 +14,14 @@ body
     padding: 3rem;
     width: 70%;
 }
+
+code
+{
+    background: #EEE;
+    padding: 0.25rem;
+}
+
+input[type=text]
+{
+    padding: 1rem;
+}

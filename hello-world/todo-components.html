@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue User Input</title>
+    <link href="../assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+    </ul>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.task }}</li>'
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            todos: []
+        },
+        created: function () {
+            this.todos = [
+                { task: 'Learn JavaScript'},
+                { task: 'Learn VueJS'},
+                { task: 'Build awesome stuff'}
+            ];
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Bind Class</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <div class="alert" v-bind:class="{ 'alert-success': this.isSuccessful, 'alert-danger': this.isError }">
+        <p>Display Bootstrap notification box</p>
+    </div>
+
+    <p><button v-on:click="switchClick">Switch Notification Box</button></p>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isSuccessful: true,
+            isError: false
+        },
+        methods: {
+            switchClick: function(){
+                if(this.isSuccessful && !this.isError)
+                {
+                    this.isSuccessful = false;
+                    this.isError = true;
+                }
+                else if(this.isError && !this.isSuccessful)
+                {
+                    this.isError = false;
+                    this.isSuccessful = true;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

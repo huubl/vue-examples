@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vue Hello World</title>
+    <title>Vue Bind Hover</title>
     <link href="../assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
 
 <div id="app">
-    {{ message }}
-
-    <p>Open your browser console and type <code>app.message</code> you'll see the message <strong>Hello World!</strong></p>
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds to see my dynamically bound title!
+  </span>
 </div>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -18,7 +18,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'Hello World!'
+            message: 'You loaded this page on ' + new Date()
         }
     })
 </script>

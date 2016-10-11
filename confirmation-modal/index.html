@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Confirmation Box</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app" style="text-align: center">
+    <h1>Delete The Post?</h1>
+
+    <div class="alert alert-danger" v-show="showMessage">
+        <p>Post has been deleted</p>
+    </div>
+
+    <p>
+        <button class="btn btn-danger" @click="showModal = true">Delete</button>
+        <button class="btn btn-primary">Submit</button>
+    </p>
+
+    <confirmation-box v-if="showModal" @close="showModal = false"></confirmation-box>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script type="text/x-template" id="modal-template">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+
+                    <div class="modal-header">
+                        <h2>Are you sure you want to delete?</h2>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" v-on:click="confirmation">
+                            Delete
+                        </button>
+                        <button class="btn btn-primary" v-on:click="$emit('close')">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</script>
+<script>
+
+    Vue.component('confirmation-box', {
+        template: '#modal-template',
+        methods: {
+            confirmation: function()
+            {
+                this.$parent.confirmationDelete();
+            }
+        }
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            showModal: false,
+            showMessage: false
+        },
+        methods: {
+            confirmationDelete: function()
+            {
+                this.showModal = false;
+                this.showMessage = true;
+            }
+        }
+    })
+</script>
+</body>
+</html>

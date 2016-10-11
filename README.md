@@ -10,3 +10,7 @@ This will include some default examples such as Hello World and from example pro
     > Todo list
     > Single page website
     > Weather application
+    
+# Start node server
+
+    > node server.js

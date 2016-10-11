@@ -1,0 +1,14 @@
+{
+    "name": "vue-tutorials",
+    "version": "0.0.0",
+    "description": "Code from the vue tutorial.",
+    "main": "server.js",
+    "dependencies": {
+    "body-parser": "^1.4.3",
+        "express": "^4.4.5"
+    },
+    "devDependencies": {},
+    "engines" : {
+        "node" : "0.12.x"
+    }
+}

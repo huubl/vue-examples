@@ -20,8 +20,12 @@ code
     background: #EEE;
     padding: 0.25rem;
 }
+label
+{
+    display: block;
+}
 
-input[type=text]
+input[type=text], textarea
 {
     padding: 1rem;
 }

@@ -17,4 +17,13 @@ const routes = [
     }
 ];
 const router = new VueRouter({ routes: routes, mode: 'history' });
-const app = new Vue({ router,  }).$mount('#app');
+router.beforeEach((to, from, next) => {
+    if(to.query.authenticated != undefined)
+    {
+        next()
+    } else {
+        next(false)
+    }
+});
+
+const app = new Vue({ router }).$mount('#app');

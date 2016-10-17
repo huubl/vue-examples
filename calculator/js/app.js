@@ -7,7 +7,7 @@ var calculator_button = Vue.component('calculator-button', {
 
 var calculator = Vue.component('calculator', {
     template: '<div class="calculator">' +
-            '<p><input type="text" v-model="displayContents" /></p>' +
+            '<p><input type="text" v-model="displayContents" readonly /></p>' +
             '<div class="numbers"><calculator-button v-for="n in 10" v-bind:text="n-1" v-on:click.native="addToSum(n-1)"></calculator-button></div>' +
             '<div class="conditions">' +
             '<calculator-button text="+" v-on:click.native="addition"></calculator-button>' +

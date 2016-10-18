@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+    <title>VueJS Transitions</title>
+</head>
+<body>
+<div id="app">
+    <h1>VueJS Transitions</h1>
+
+    <div class="content">
+
+        <h2>Fade</h2>
+        <p>
+            <button v-on:click="showFade = true">FadeIn</button>
+            <button v-on:click="showFade = false">FadeOut</button>
+        </p>
+        <transition name="fade">
+            <p v-if="showFade">I'm Fading</p>
+        </transition>
+
+        <h2>Slide</h2>
+        <p>
+            <button v-on:click="showSlide = true">Slide In</button>
+            <button v-on:click="showSlide = false">Slide Out</button>
+        </p>
+        <transition name="slide">
+            <p v-if="showSlide">I'm Sliding</p>
+        </transition>
+
+        <h2>Bounce</h2>
+        <p>
+            <button v-on:click="showBounce = true">Bounce In</button>
+            <button v-on:click="showBounce = false">Bounce Out</button>
+        </p>
+        <transition name="bounce">
+            <p v-if="showBounce">I'm Bouncing</p>
+        </transition>
+
+        <h2>CSS Animate Bounce</h2>
+        <p>
+            <button v-on:click="showAnimateBounce = true">Bounce In</button>
+            <button v-on:click="showAnimateBounce = false">Bounce Out</button>
+        </p>
+        <transition name="animateBounce" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
+            <p v-if="showAnimateBounce">I'm Bouncing using animate.css</p>
+        </transition>
+    </div>
+</div>
+
+<script src='https://unpkg.com/vue@next/dist/vue.js'></script>
+<script src='https://unpkg.com/vue-router@next'></script>
+<script src="js/app.js"></script>
+</body></html>

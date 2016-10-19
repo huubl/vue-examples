@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+    <title>Mixin Example</title>
+</head>
+<body>
+<div id="app">
+    <mixin-example></mixin-example>
+    <second-mixin-example></second-mixin-example>
+</div>
+
+<script src='https://unpkg.com/vue@next/dist/vue.js'></script>
+<script>
+    var mixinExample = {
+        data: function(){
+            return {
+                message: 'This message comes from a mixin'
+            }
+        },
+    };
+
+    Vue.component('mixin-example', {
+        mixins: [mixinExample],
+        template: '<p>First message - {{ message }}</p>'
+    });
+
+    Vue.component('second-mixin-example', {
+        mixins: [mixinExample],
+        template: '<p>Second message - {{ message }}</p>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+        }
+    });
+</script>
+</body></html>

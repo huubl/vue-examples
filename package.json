@@ -1,7 +1,7 @@
 {
-    "name": "vue-tutorials",
+    "name": "vue-examples",
     "version": "0.0.0",
-    "description": "Code from the vue tutorial.",
+    "description": "Code from the vue examples.",
     "main": "server.js",
     "scripts": {
         "dev": "node server.js"

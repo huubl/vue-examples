@@ -30,6 +30,10 @@ This will include some default examples such as Hello World and from example pro
     > Transition Effects
     > Weather Application
     
+# Install dependencies
+
+    > npm i
+    
 # Start node server
 
     > node server.js

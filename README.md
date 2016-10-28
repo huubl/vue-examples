@@ -30,8 +30,9 @@ This will include some default examples such as Hello World and from example pro
     > Transition Effects
     > Weather Application
     
-# Start node server
+# Install packages and Start node server
 
+    > npm install
     > node server.js
     
 This starts a server accessed on http://localhost:3000/

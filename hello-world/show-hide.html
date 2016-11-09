@@ -10,7 +10,7 @@
 
 <div id="app">
   <p v-if="seen">Message Can Be Seen!</p>
-  <p><button class="btn btn-lg btn-primary" v-on:click="toggle">Toggle</button></p>
+  <p><button class="btn btn-lg btn-primary" v-on:click="seen = !seen">Toggle</button></p>
 </div>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -19,16 +19,6 @@
         el: '#app',
         data: {
             seen: true
-        },
-        methods: {
-            toggle: function (){
-                if(this.seen)
-                {
-                    this.seen = false;
-                } else {
-                    this.seen = true;
-                }
-            }
         }
     })
 </script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>VueJS Markdown</title>
+</head>
+<body>
+<div id="app">
+    <h1>VueJS Markdown</h1>
+
+    <div class="content">
+        <div class="columns">
+            <div class="column is-6">
+                <textarea v-model="markdown" class="textarea" rows="20"></textarea>
+            </div>
+
+            <div class="column is-6" v-html="compiledMarkdown"></div>
+        </div>
+    </div>
+</div>
+
+<script src='https://unpkg.com/vue@2.2.2'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js'></script>
+<script src="js/app.js"></script>
+</body></html>

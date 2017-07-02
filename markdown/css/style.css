@@ -1,0 +1,14 @@
+.columns
+{
+    display: flex;
+}
+
+.is-6
+{
+    width: 50%;
+}
+
+textarea
+{
+    width: 80%;
+}
